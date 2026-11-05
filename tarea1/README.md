@@ -211,25 +211,25 @@ Una versión LTS ofrece soporte a largo plazo, mientras que una versión Innovat
 ## Evidencias
 
 ### 1. PostgreSQL 17: construcción del contenedor
-![PostgreSQL 17: up -d --build con el aviso de versión](img/01-postgres17-up.png)
+![PostgreSQL 17: up -d --build con el aviso de versión](img/01-pg17-up.png)
 
 ### 2. PostgreSQL 17: comprobación del contenedor
-![PostgreSQL 17: docker compose ps y SELECT version()](img/02-postgres17-version.png)
+![PostgreSQL 17: docker compose ps y SELECT version()](img/02-pg17-version.png)
 
 ### 3. PostgreSQL 18: comprobación del contenedor
-![PostgreSQL 18: docker compose ps con healthy y SELECT version()](img/03-postgres18-version.png)
+![PostgreSQL 18: docker compose ps con healthy y SELECT version()](img/03-pg18-version.png)
 
 ### 4. PostgreSQL 18: Adminer
-![Adminer mostrando las tablas](img/04-postgres18-adminer.png)
+![Adminer mostrando las tablas](img/04-pg18-adminer.png)
 
 ### 5. Diferencias de PostgreSQL 18 en GitHub
-![Diff de la confirmación de PostgreSQL 18](img/05-diff-postgres18.png)
+![Diff de la confirmación de PostgreSQL 18](img/05-pg18-diff.png)
 
 ### 6. MySQL: phpMyAdmin
-![phpMyAdmin mostrando SELECT VERSION()](img/06-phpmyadmin-version.png)
+![phpMyAdmin mostrando SELECT VERSION()](img/06-phpmyadmin.png)
 
 ### 7. Docker Desktop: contenedores encendidos
 ![Docker Desktop mostrando los dos stacks encendidos](img/07-docker-desktop.png)
 
 ### 8. Historial de confirmaciones en GitHub
-![Historial de confirmaciones del repositorio](img/08-historial-commits.png)
+![Historial de confirmaciones del repositorio](img/08-historial.png)
