@@ -151,18 +151,58 @@ La condición era respetar las obligaciones de la licencia, como conservar los a
 - Schwaber, K., & Sutherland, J. (2020). The Scrum Guide: The definitive guide to Scrum: The rules of the game. https://scrumguides.org/scrum-guide.html
 
 - Punto 3. Herramientas para la gestión de proyectos
-
-- Docker. (s. f.). Dockerfile reference. https://docs.docker.com/reference/dockerfile/
 - Docker. (s. f.). What is a container? https://www.docker.com/resources/what-container/
 - GitHub. (s. f.). About Git. https://docs.github.com/en/get-started/using-git/about-git
 - GitHub. (s. f.). About projects. https://docs.github.com/en/issues/planning-and-tracking-with-projects/learning-about-projects/about-projects
-- GitHub. (s. f.). About continuous integration. https://docs.github.com/en/actions/get-started/continuous-integration
 - Ubuntu. (s. f.). What are containers? https://ubuntu.com/containers/what-are-containers
 
 - Punto 4. Licencias de software y casos reales
-
 - MariaDB Foundation. (s. f.). MariaDB in brief. https://mariadb.org/en/
-- Open Source Initiative. (s. f.). Licenses. https://opensource.org/licenses
 - Oracle. (s. f.). MySQL Community Edition. https://www.mysql.com/products/community/
 
 - Para completar la informacion que faltante se utilizo IA Chatgpt.com 
+
+## Ejercicio 3.
+| **Busque…**                     | **Viejo**                         | **Nuevo**                      |
+| ------------------------------- | --------------------------------- | ------------------------------ |
+| Nombre del archivo              | `docker-compose.yml`              | `compose.yaml`                 |
+| Primera línea                   | `version: '3.8'`                  | No hay                         |
+| Imagen                          | `postgres:17`                     | `FROM postgres:18.6`           |
+| Datos                           | `./data:/var/lib/postgresql/data` | `datos_db:/var/lib/postgresql` |
+| Contraseña                      | escrita: `postgres`               | `${POSTGRES_PASSWORD:-...}`    |
+| Puerto                          | `"5432:5432"`                     | `"127.0.0.1:5434:5432"`        |
+| ¿Sabe si está lista?            | No                                | `healthcheck`                  |
+| Interfaz web                    | No                                | Adminer                        |
+| La carpeta del proyecto, dentro | No, sólo `data/`                  | `./:/trabajo`                  |
+
+## 2. ¿Se usaba el Dockerfile viejo? Justifíquelo con el docker-compose.yml.
+
+No. El archivo docker-compose.yml utilizaba directamente la imagen postgres:17 mediante image:, sin incluir build: ., por lo que el Dockerfile no se utilizaba.
+
+## 3. ¿Qué es el versionado semántico y por qué pasar de la 17 a la 18 es un cambio mayor?
+
+Es un sistema que identifica las versiones mediante tres números: MAJOR.MINOR.PATCH. Pasar de PostgreSQL 17 a 18 es un cambio mayor porque aumenta el número MAJOR, lo que indica una nueva versión principal que puede incluir cambios incompatibles con la anterior.
+
+## Ejercicio 4
+
+## 1. Tabla comparativa: PostgreSQL + Adminer vs. MySQL + phpMyAdmin
+
+| **Característica** | **PostgreSQL + Adminer** | **MySQL + phpMyAdmin** |
+|---|---|---|
+| Motor de base de datos | PostgreSQL | MySQL |
+| Imagen | `postgres:18.6` | `mysql:9.7.2` |
+| Contenedor | `apsw_db` | `tarea1_mysql` |
+| Puerto de la base de datos | `5434:5432` | `3307:3306` |
+| Base de datos predeterminada | `proyecto` | `proyecto` |
+| Carpeta de datos | `/var/lib/postgresql` | `/var/lib/mysql` |
+| Interfaz web | Adminer | phpMyAdmin |
+| Imagen de la interfaz | `adminer:5.5.1` | `phpmyadmin:5.2.3` |
+| Puerto de la interfaz | `8080` | `80` |
+| Puerto de acceso local | `8080` | `8081` |
+| Comprobación de disponibilidad | `pg_isready` | `mysqladmin ping` |
+| Espera a que la base esté lista | `service_healthy` | `service_healthy` |
+
+
+## 2. ¿Qué es una versión LTS y una Innovation, y por qué se usa mysql:9.7.2 y no mysql:latest?
+
+Una versión LTS ofrece soporte a largo plazo, mientras que una versión Innovation incorpora nuevas funcionalidades con actualizaciones más frecuentes. Se utiliza mysql:9.7.2 para mantener una versión específica y evitar que mysql:latest cambie automáticamente a una versión diferente.
