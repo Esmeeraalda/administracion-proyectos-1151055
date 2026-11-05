@@ -81,6 +81,7 @@ define y configura los servicios que forman una aplicación. Permite establecer 
 es un mecanismo de almacenamiento administrado por Docker que permite conservar los datos generados por un contenedor, incluso después de eliminarlo.
 
 * Comandos (up -d, exec, stop, down, ps y logs):
+
 | Comando | Descripción |
 |---|---|
 | `docker compose up -d` | Crea e inicia los contenedores en segundo plano. |
