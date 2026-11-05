@@ -10,5 +10,3 @@ Fecha: 27/10/2026
 - [Tarea 1](tarea1/README.md)
 - [Tarea 2](tarea2/README.md)
 - [Tarea 3](tarea3/README.md)
-
-
