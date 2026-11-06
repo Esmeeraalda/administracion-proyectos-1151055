@@ -10,6 +10,13 @@
                 "@modelcontextprotocol/server-filesystem",
 				 "--confine-roots",
                 "C:\\Users\\esmer\\Documents\\administracion-proyectos-1151055\\tarea2\\config"]
-		}
+		},
+        "servidor-propio": {
+            "type": "stdio",
+            "command": "C:\\Users\\esmer\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+            "args": [
+                "C:\\Users\\esmer\\Documents\\administracion-proyectos-1151055\\tarea2\\servidor-propio\\servidor.py"
+            ]
+        }
 	}
 }
